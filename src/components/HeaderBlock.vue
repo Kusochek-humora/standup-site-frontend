@@ -179,8 +179,8 @@ const menuItems = [
   &__social-btn {
     display: inline-block;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     overflow: hidden;
     svg {
@@ -297,8 +297,8 @@ const menuItems = [
   }
   &__social-item {
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
   &__social-dropdown {
     position: absolute;
