@@ -399,7 +399,7 @@ const menuItems = [
     }
     a {
       color: $black;
-      font-size: 30px;
+      font-size: 26px;
       text-transform: uppercase;
     }
   }
