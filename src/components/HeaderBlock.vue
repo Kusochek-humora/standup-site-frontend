@@ -82,11 +82,7 @@ const openedPlatform = ref<string | null>(null)
 function toggle(platform: string) {
   openedPlatform.value = openedPlatform.value === platform ? null : platform
 }
-// function closePlatform(platform: string) {
-//   if (openedPlatform.value === platform) {
-//     openedPlatform.value = null
-//   }
-// }
+
 const menuItems = [
   { key: 'poster', link: '/poster' },
   { key: 'tours', link: '/tours' },
@@ -178,7 +174,8 @@ const menuItems = [
 <style scoped lang="scss">
 .header {
   padding: 20px 0;
-  background-color: rgba(16, 17, 33, 1);
+  background-color: rgba(34, 36, 69, 1);
+  border-bottom: 1px solid rgba($white, $alpha: 0.3);
   &__basket {
     margin: 0 25px;
   }
@@ -196,8 +193,8 @@ const menuItems = [
       object-position: left center;
     }
 
-    @media screen and (max-width: 1024px) {
-    }
+    // @media screen and (max-width: 1024px) {
+    // }
   }
   &__burger {
     display: none;
@@ -216,7 +213,7 @@ const menuItems = [
   }
   &__container {
     display: flex;
-    // justify-content: space-between;
+
     align-items: center;
   }
   &__list {
@@ -278,6 +275,12 @@ const menuItems = [
     align-items: center;
     gap: 16px;
     margin-left: auto;
+
+    @media screen and (max-width: 1024px) {
+      margin-left: 0;
+      justify-content: center;
+      width: 100%;
+    }
   }
   &__social-item {
     position: relative;
@@ -290,6 +293,7 @@ const menuItems = [
     left: 50%;
     transform: translateX(-50%);
     background: rgba(34, 36, 69, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* лёгкая, размытая тень */
     border-radius: 8px;
     // padding: 8px;
     display: flex;
@@ -329,17 +333,7 @@ const menuItems = [
   background: rgba(0, 0, 0, 0.5); // полупрозрачный чёрный
   z-index: 900;
 }
-// .header .header__social-icon {
-//   background: none;
 
-//   cursor: pointer;
-// }
-
-// .header__social-single {
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-// }
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -350,9 +344,11 @@ const menuItems = [
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-
+  transition: all cubic-bezier(0.81, 0.16, 0.41, 0.98) 0.5s;
   max-width: 500px;
+  left: 100%;
   width: 100%;
+  transform: translateX(-100%);
   &__close {
     display: inline-block;
     position: relative;
@@ -416,12 +412,12 @@ const menuItems = [
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.3s;
+  transition: all cubic-bezier(0.81, 0.16, 0.41, 0.98) 0.5s;
 }
 .slide-enter-from {
-  transform: translateX(-100%);
+  transform: translateX(0);
 }
 .slide-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 </style>

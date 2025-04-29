@@ -23,8 +23,6 @@ const cartCount = ref(3)
   :deep(path) {
     fill: $yellow;
     transition: 0.3s all;
-
-
   }
 }
 
