@@ -1,13 +1,12 @@
-
-  {
-    "header": {
-      "poster": "Афиша",
-      "tours": "Туры",
-      "kitchen": "Кухня",
-      "about": "О проекте",
-      "blog": "Блог",
-      "merch": "Мерч",
-      "subscription": "Подписка",
-      "contacts": "Контакты"
-    }
+{
+  "header": {
+    "poster": "Афиша",
+    "tours": "Туры",
+    "kitchen": "Кухня",
+    "about": "О проекте",
+    "blog": "Блог",
+    "merch": "Мерч",
+    "subscription": "Подписка",
+    "contacts": "Контакты"
   }
+}

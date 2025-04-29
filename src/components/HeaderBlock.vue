@@ -5,6 +5,8 @@ import IconComponent from './UI/IconComponent.vue'
 import { nextTick, onMounted, ref } from 'vue'
 import BasketBtn from './UI/BasketBtn.vue'
 import { onClickOutside, useTemplateRefsList } from '@vueuse/core'
+import LogoComponent from './UI/LogoComponent.vue'
+
 const { switchLanguage, locale, t, currentLang } = useLanguage()
 const isMenuOpen = ref(false)
 
@@ -124,10 +126,7 @@ const menuItems = [
       </ul>
     </div>
     <nav class="header__container container">
-      <RouterLink to="/" class="header__logo">
-        <img src="../assets/images/header__logo.svg" alt="Logo" class="header__logo-img" />
-      </RouterLink>
-
+      <LogoComponent />
       <ul class="header__list">
         <li class="header__list-item" v-for="links in menuItems" :key="links.key">
           <RouterLink class="header__list-link" :to="links.link">{{
@@ -192,23 +191,7 @@ const menuItems = [
   &__basket {
     margin: 0 25px;
   }
-  &__logo {
-    width: 111px;
-    height: 54px;
-    position: relative;
-    display: inline-block;
-    margin-right: auto;
-    &-img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: left center;
-    }
 
-    // @media screen and (max-width: 1024px) {
-    // }
-  }
   &__burger {
     display: none;
     width: 33px;
@@ -318,7 +301,6 @@ const menuItems = [
     overflow: hidden;
     li:hover {
       a {
-
         background-color: $yellow;
         color: $black;
       }
