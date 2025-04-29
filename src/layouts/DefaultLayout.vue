@@ -6,9 +6,14 @@ import HeaderBlock from '@/components/HeaderBlock.vue'
 <template>
   <HeaderBlock />
 
-  <main>
+  <main class="main-content">
     <slot />
   </main>
 
   <FooterBlock />
 </template>
+<style scoped lang="scss">
+.main-content {
+  flex-grow: 1;
+}
+</style>

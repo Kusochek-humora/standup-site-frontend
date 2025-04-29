@@ -1,3 +1,4 @@
+@use "sass:map";
 $breakpoints: (
   "mobile": 480px,
   "tablet": 768px,
@@ -7,8 +8,8 @@ $breakpoints: (
 
 /* ===== Mixin для адаптива ===== */
 @mixin media($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
@@ -38,14 +39,20 @@ $breakpoints: (
   );
 }
 
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 //examples
-
+@mixin transition($props: all, $duration: 0.3s, $timing: ease) {
+  transition: $props $duration $timing;
+}
 
 // .title {
 //   @include fluid-font(18, 32); // от 18px до 32px плавно
 // }
-
-
 
 // .block {
 //   font-size: 20px;

@@ -1,6 +1,7 @@
-@import "vars";
+@use "vars" as *;
 body {
   background-color: $bg;
+  color: $white;
 }
 h1,
 h2,
@@ -26,3 +27,15 @@ li {
   font-family: "Onest", sans-serif;
 }
 // font-family: "Montserrat", sans-serif;
+.container {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 0 30px;
+  width: 100%;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
