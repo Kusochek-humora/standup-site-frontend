@@ -59,9 +59,8 @@ import LogoComponent from './UI/LogoComponent.vue'
     @media screen and (max-width: 1024px) {
       flex-wrap: wrap;
     }
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       flex-direction: column;
-
     }
   }
 
@@ -82,6 +81,11 @@ import LogoComponent from './UI/LogoComponent.vue'
       &:nth-child(2) {
         text-align: center;
         width: 100%;
+      }
+      &:nth-child(2) {
+        br:last-child {
+          display: block;
+        }
       }
     }
     address,
