@@ -105,7 +105,7 @@ const menuItems = [
           :key="platform.platform"
           class="header__social-item"
         >
-          <button @click.stop="toggle(platform.platform)" class="header__social-icon">
+          <button @click.stop="toggle(platform.platform)" class="header__social-btn">
             <IconComponent :name="platform.iconName" size="24px" />
           </button>
 
@@ -176,6 +176,19 @@ const menuItems = [
   padding: 20px 0;
   background-color: rgba(34, 36, 69, 1);
   border-bottom: 1px solid rgba($white, $alpha: 0.3);
+  &__social-btn {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    svg {
+      width: 100%;
+      height: 100%;
+      @include absolute-center;
+    }
+  }
   &__basket {
     margin: 0 25px;
   }
@@ -284,8 +297,8 @@ const menuItems = [
   }
   &__social-item {
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
   }
   &__social-dropdown {
     position: absolute;
@@ -305,6 +318,7 @@ const menuItems = [
     overflow: hidden;
     li:hover {
       a {
+
         background-color: $yellow;
         color: $black;
       }
@@ -321,7 +335,7 @@ const menuItems = [
       font-weight: 400;
       padding: 10px;
       width: 100%;
-
+      white-space: nowrap;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       @include transition;
     }
